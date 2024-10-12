@@ -106,3 +106,9 @@ devel-su systemctl disable byedpi
    4. Remove `byedpi.service` file
 6. Remove ByeDPI binary. In terminal: `devel-su rm -f /usr/local/bin/ciadpi`
 7. Done! ByeDPI or Privoxy is no longer running in the background.
+
+## Troubleshooting
+
+You might need to update the browser to gecko 91. Without this Discord login refused to open for me (proxy worked fine on other blocked services).
+
+If your battery life got worse, then wait for me to release zapret tutorial. Once it will be released, uninstall ByeDPI using instructions above and install zapret.
