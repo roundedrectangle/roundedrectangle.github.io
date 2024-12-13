@@ -58,3 +58,12 @@ h1.title, h2.description, h3.description, div.socials, div.contributions-title {
 img.contributions {
     width: 100%;
 }
+
+div.socials a {
+    background: lightskyblue;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+}

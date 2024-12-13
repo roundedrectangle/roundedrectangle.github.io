@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-permalink: /about/
+permalink: /blog/about/
 ---
 
 I'm a software developer. Technologies I know:
