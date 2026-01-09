@@ -54,7 +54,6 @@ Description=ByeDPI
 Documentation=https://github.com/hufrea/byedpi
 Wants=network-online.target
 After=network-online.target nss-lookup.target
-
 [Service]
 NoNewPrivileges=yes
 StandardOutput=null
@@ -65,7 +64,6 @@ ExecStart=ciadpi $BYEDPI_OPTIONS
 TimeoutStopSec=5s
 PrivateTmp=true
 ProtectSystem=full
-
 [Install]
 WantedBy=default.target
         ```
