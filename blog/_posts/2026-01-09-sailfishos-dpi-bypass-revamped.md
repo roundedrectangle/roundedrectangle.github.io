@@ -28,7 +28,7 @@ So, we decided to use ByeDPI. Since it uses SOCKS, we need a SOCKS to HTTP forwa
 devel-su systemctl enable harbour-privoxy
 devel-su systemctl start harbour-privoxy
     ```
-2. Download ByeDPI from [releases page](https://github.com/hufrea/byedpi/releases/latest), unpack it
+1. Download ByeDPI from [releases page](https://github.com/hufrea/byedpi/releases/latest), unpack it
     - For armv7hl devices, download armv7l version
     - For aarch64 devices, download aarch64 version
     - For i486 devices, download i686 version
@@ -69,29 +69,29 @@ ProtectSystem=full
 [Install]
 WantedBy=default.target
         ```
-7. Save the file
-8. Add the ByeDPI configuration
+    1. Save the file
+1. Add the ByeDPI configuration
    Create a file at `~/.config/byedpi.conf` (`~` is the home directory) with the following contents:
    `BYEDPI_OPTIONS="-o1 -o25+s -T3 -At"`
    These are the options which work for me currently. If these don't work for you, modify them accordingly.
-10. Enable byedpi
+2. Enable byedpi
     ```bash
 systemctl reload-daemon --user
 systemctl enable --user --now byedpi
     ```
-11. Configure Privoxy to forward byedpi
+1. Configure Privoxy to forward byedpi
    1. For this, I recommend you installing file browser and the root extension from OpenRepos
    2. Open file browser with root mode
    3. Go to Root (`/`), then `usr`, `share`, `harbour-privoxy` and finally `conf`
    4. Click on `config.sailfish`, swipe to left, and select Edit in the menu
    5. At the top, insert a new line and type: `forward-socks5 / 127.0.0.1:1080 .`. Do not forget the dot at the end
-12. Restart Privoxy in Terminal: `devel-su systemctl restart harbour-privoxy`
-13.  Configure SailfishOS to use Privoxy
+2. Restart Privoxy in Terminal: `devel-su systemctl restart harbour-privoxy`
+3.  Configure SailfishOS to use Privoxy
     1. Open Settings, WLAN, Advanced and enable Global proxy
     2. Choose Manual and click Add proxy
     3. Type `127.0.0.1` as the address and `8118` as the port
     4. Click Save
-14.  Done! To temporarily disable the proxy, use the Global proxy toggle. You can also add it to the top menu.
+4.  Done! To temporarily disable the proxy, use the Global proxy toggle. You can also add it to the top menu.
 
 ## Uninstallation
 
