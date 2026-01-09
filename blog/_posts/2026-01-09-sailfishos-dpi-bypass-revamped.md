@@ -24,10 +24,10 @@ So, we decided to use ByeDPI. Since it uses SOCKS, we need a SOCKS to HTTP forwa
     - Enable developer tools and set an SSH password first, then open freshly installed Terminal app
     - When asked, enter your password
     - You can use up/down arrows to navigate through command history
-```bash
+    ```bash
 devel-su systemctl enable harbour-privoxy
 devel-su systemctl start harbour-privoxy
-```
+    ```
 2. Download ByeDPI from [releases page](https://github.com/hufrea/byedpi/releases/latest), unpack it
     - For armv7hl devices, download armv7l version
     - For aarch64 devices, download aarch64 version
@@ -36,10 +36,10 @@ devel-su systemctl start harbour-privoxy
     - When asked, enter your password
     - You can autocomplete paths using tab key
     - Replace `/home/defaultuser/Downloads/ciadpi-aarch64` with your actual binary path
-```bash
+    ```bash
 cd ~
 devel-su mv /home/defaultuser/Downloads/ciadpi-aarch64 /usr/local/bin/ciadpi
-```
+    ```
 1. Try running `ciadpi`. It should show nothing now. If it shows an error, you have done something wrong. Press control+c to stop byedpi
 2. Configure a systemd service to run byedpi in the background
    1. For this, I recommend you installing file browser from OpenRepos
@@ -48,7 +48,7 @@ devel-su mv /home/defaultuser/Downloads/ciadpi-aarch64 /usr/local/bin/ciadpi
    4. In up menu, select Create new..., empty text file and `byedpi.service` as the name
    5. Click on newly created file, swipe to left, and select Edit in the menu
    6. Type:
-```systemd
+    ```systemd
 [Unit]
 Description=ByeDPI
 Documentation=https://github.com/hufrea/byedpi
@@ -68,17 +68,17 @@ ProtectSystem=full
 
 [Install]
 WantedBy=default.target
-```
+    ```
 7. Save the file
 8. Add the ByeDPI configuration
    Create a file at `~/.config/byedpi.conf` (`~` is the home directory) with the following contents:
    `BYEDPI_OPTIONS="-o1 -o25+s -T3 -At"`
    These are the options which work for me currently. If these don't work for you, modify them accordingly.
 10. Enable byedpi
-```bash
+    ```bash
 systemctl reload-daemon --user
 systemctl enable --user --now byedpi
-```
+    ```
 11. Configure Privoxy to forward byedpi
    1. For this, I recommend you installing file browser and the root extension from OpenRepos
    2. Open file browser with root mode
@@ -103,9 +103,9 @@ devel-su systemctl disable harbour-privoxy
     ```
 3. Uninstall Privoxy in Chum or on the home screen
 4. Disable ByeDPI:
-```bash
+    ```bash
 systemctl disable --user --now byedpi
-```
+    ```
 5. Remove ByeDPI service
    1. For this, I recommend you installing file browser from OpenRepos
    2. Open file browser
