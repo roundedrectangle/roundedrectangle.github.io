@@ -68,7 +68,7 @@ ProtectSystem=full
 
 [Install]
 WantedBy=default.target
-    ```
+        ```
 7. Save the file
 8. Add the ByeDPI configuration
    Create a file at `~/.config/byedpi.conf` (`~` is the home directory) with the following contents:
