@@ -48,7 +48,7 @@ devel-su mv /home/defaultuser/Downloads/ciadpi-aarch64 /usr/local/bin/ciadpi
    4. In up menu, select Create new..., empty text file and `byedpi.service` as the name
    5. Click on newly created file, swipe to left, and select Edit in the menu
    6. Type:
-    ```systemd
+        ```systemd
 [Unit]
 Description=ByeDPI
 Documentation=https://github.com/hufrea/byedpi
